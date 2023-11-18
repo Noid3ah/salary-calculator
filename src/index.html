@@ -9,25 +9,39 @@
   </head>
   <body> 
     <main class="main"> 
-      <form action="/" method="post" id="form"> 
-        <div class="form-control">
-          <label for="base">Base salary:</label>
-          <input class="base" id="base" type="number" name="gross" placeholder="Base salary" value="2000000">
-        </div>
-        <div class="form-control">
-          <label for="pension">Pension:</label>
-          <input class="pension" id="pension" type="number" name="pension" placeholder="pension">
-        </div>
-        <div class="form-control">
-          <label for="allowance">Allowance:</label>
-          <input class="allowance" id="allowance" type="number" name="allowance" placeholder="allowance" value="100000">
-        </div>
-        <div class="form-control">
-          <label for="allowTax">Allowance Tax:</label>
-          <input class="allowanceTaxable" id="allowTax" type="number" name="allowance" placeholder="allowanceTaxable" min="0" max="100" maxlength="3" value="40">
-        </div>
-        <button class="submit" type="submit">Submit</button>
-      </form>
+      <section class="form-section">
+        <form action="/" method="post" id="form"> 
+          <div class="form-control">
+            <label for="base"><span> </span>Base salary:</label>
+            <input class="base" id="base" type="number" name="gross" placeholder="$0" value="" required>
+          </div>
+          <div class="form-control">
+            <label for="allowance">Allowance:</label>
+            <input class="allowance" id="allowance" type="number" name="allowance" placeholder="$0" value="0">
+          </div>
+          <div class="form-control">
+            <label for="allowTax">Allowance Tax:</label>
+            <input class="allowanceTaxable" id="allowTax" type="number" name="allowance" placeholder="%" min="0" max="100" maxlength="3" value="0">
+          </div>
+          <div class="form-control">
+            <label for="pension"> <span> </span>Pension:</label>
+            <input class="pension" id="pension" type="number" name="pension" min="0" max="20" placeholder="%" value="" required>
+          </div>
+          <button class="submit" type="submit">Show Net Salary</button>
+          <div class="salaryDisplay"> 
+            <div class="annually"> 
+              <h2>Yearly:</h2>
+              <p>$0</p>
+            </div>
+            <hr>
+            <div class="monthly">
+              <h2>Monthly:</h2>
+              <p>$0</p>
+            </div>
+          </div>
+        </form>
+      </section>
+      <section class="table-section"></section>
     </main>
   </body>
 </html>
