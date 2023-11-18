@@ -56,10 +56,6 @@ select {
   --_display: rgb(255, 200, 0);
 }
 
-.contain {
-  width: 100%;
-}
-
 body {
   background-color: var(--_bgc);
   display: flex;
@@ -152,6 +148,12 @@ body {
 .form-section form .salaryDisplay.show-drop {
   max-height: 500px;
   padding: 2rem;
+  transition: max-height 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.form-section form .salaryDisplay.show-drop .monthly,
+.form-section form .salaryDisplay.show-drop .annually {
+  opacity: 1;
+  transition: opacity 0.4s ease;
 }
 .form-section form .salaryDisplay {
   background-color: var(--_display);
@@ -160,12 +162,16 @@ body {
   font-family: var(--_ff4);
   display: grid;
   gap: 1rem;
+  max-height: 0px;
+  transition: max-height 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .form-section form .salaryDisplay .monthly,
 .form-section form .salaryDisplay .annually {
   display: grid;
   grid-template-columns: 1fr 2fr;
   align-items: center;
+  opacity: 0;
+  transition: opacity 0.2s ease;
 }
 .form-section form .salaryDisplay .monthly h2,
 .form-section form .salaryDisplay .annually h2 {

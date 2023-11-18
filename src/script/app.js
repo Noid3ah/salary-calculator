@@ -116,14 +116,14 @@ function displayQuickDisplay() {
   const currency = "$";
   monthlyDisplay.querySelector(
     "p"
-  ).textContent = `${currency}${Intl.NumberFormat("en-US", {
+  ).textContent = `${currency} ${Intl.NumberFormat("en-US", {
     maximumFractionDigits: 2,
     minimumFractionDigits: 2,
   }).format(monthlyValue)}`;
 
   annualDisplay.querySelector(
     "p"
-  ).textContent = `${currency}${Intl.NumberFormat("en-US", {
+  ).textContent = `${currency} ${Intl.NumberFormat("en-US", {
     maximumFractionDigits: 2,
     minimumFractionDigits: 2,
   }).format(annualValue)}`;
