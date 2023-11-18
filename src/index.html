@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary calculator</title>
+    <link rel="stylesheet" href="./css/app.css">
+    <script src="./script/app.js" defer> </script>
+  </head>
+  <body> 
+    <main class="main"> 
+      <form action="/" method="post" id="form"> 
+        <div class="form-control">
+          <label for="base">Base salary:</label>
+          <input class="base" id="base" type="number" name="gross" placeholder="Base salary" value="2000000">
+        </div>
+        <div class="form-control">
+          <label for="pension">Pension:</label>
+          <input class="pension" id="pension" type="number" name="pension" placeholder="pension">
+        </div>
+        <div class="form-control">
+          <label for="allowance">Allowance:</label>
+          <input class="allowance" id="allowance" type="number" name="allowance" placeholder="allowance" value="100000">
+        </div>
+        <div class="form-control">
+          <label for="allowTax">Allowance Tax:</label>
+          <input class="allowanceTaxable" id="allowTax" type="number" name="allowance" placeholder="allowanceTaxable" min="0" max="100" maxlength="3" value="40">
+        </div>
+        <button class="submit" type="submit">Submit</button>
+      </form>
+    </main>
+  </body>
+</html>

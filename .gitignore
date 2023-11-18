@@ -1,0 +1,7 @@
+node_modules
+public
+src/sass
+src/index.pug
+package-lock.json
+package.json
+package.txt
