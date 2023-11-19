@@ -88,7 +88,7 @@ function handleNullAllowance() {
 }
 
 function calculateNetSalary() {
-  const realGross = parseInt(base.value) + parseInt(handleNullAllowance());
+  const realGross = parseFloat(base.value) + parseFloat(handleNullAllowance());
 
   const rValue =
     realGross -
@@ -98,39 +98,29 @@ function calculateNetSalary() {
     deductNis() -
     deductPension();
 
-  console.log(realGross);
   return rValue;
 }
 
 // function calculateMonthlySalary() {
-//   const realGross = parseInt(base.value) + parseInt(allowance.value);
+//   const realGross = parseFloat(base.value) + parseFloat(handleNullAllowance());
 //   const mth = 12;
 //   return [
 //     { rg: realGross / mth },
 //     { nht: deductNht() / mth },
-//     { edu: deductEduTax() / mth },
-//     { income: deductIncomeTax() / mth },
+//     { eduTax: deductEduTax() / mth },
+//     { incomeTax: deductIncomeTax() / mth },
 //     { nis: deductNis() / mth },
-//     { pen: deductPension() / mth },
+//     { pension: deductPension() / mth },
 //   ];
 // }
 
 function displayQuickDisplay() {
   const monthlyDisplay = salaryDisplay.querySelector(".monthly");
   const annualDisplay = salaryDisplay.querySelector(".annually");
-
   const monthlyValue = calculateNetSalary() / 12;
   const annualValue = calculateNetSalary() / 1;
 
-  console.log(calculateNetSalary() / 12, typeof annualValue);
-
   const currency = "$";
-  console.log(
-    `${currency} ${Intl.NumberFormat("en-US", {
-      maximumFractionDigits: 2,
-      minimumFractionDigits: 2,
-    }).format(monthlyValue)}`
-  );
 
   monthlyDisplay.querySelector(
     "p"

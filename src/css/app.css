@@ -370,6 +370,7 @@ select {
   --_ff5: "Montserrat", sans-serif;
   --_input-radius: 0.4rem;
   --_display: rgb(255, 200, 0);
+  --_input-height: 50px;
 }
 
 body {
@@ -426,14 +427,14 @@ body {
 }
 .form-section form .form-control input[type=number] {
   border-radius: var(--_input-radius);
-  height: 50px;
+  height: var(--_input-height);
   border: none;
-  padding-inline: 0.5rem;
+  padding-inline: 0.8rem;
   font-family: var(--_ff1);
   font-size: 1.2rem;
-  font-weight: 600;
+  font-weight: 900;
   background-color: #fff;
-  color: #133333;
+  color: #54525a;
 }
 .form-section form .form-control input[type=number]::placeholder {
   font-family: var(--_ff1);
@@ -448,14 +449,14 @@ body {
 }
 .form-section form .form-control input.allowanceTaxable,
 .form-section form .form-control input.pension {
-  max-width: 60px;
+  max-width: 85px;
 }
 .form-section form button[type=submit] {
   border: none;
   background-color: white;
   background: radial-gradient(ellipse farthest-corner at right bottom, #fedb37 0%, #fdb931 8%, #9f7928 30%, #8a6e2f 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #ffffff 0%, #ffffac 8%, #d1b464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
   border-radius: var(--_input-radius);
-  padding: 0.5rem 0;
+  height: var(--_input-height);
   margin-top: 1rem;
   margin-bottom: 1rem;
   font-family: var(--_ff1);
@@ -523,7 +524,7 @@ body {
   font-weight: 600;
   color: #9f7928;
   border-radius: var(--_input-radius);
-  padding: 0.5rem 0;
+  height: var(--_input-height);
   border: none;
   cursor: pointer;
 }
