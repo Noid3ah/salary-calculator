@@ -401,7 +401,7 @@ body {
   gap: 1.5rem;
   color: white;
   width: 100%;
-  max-width: 350px;
+  max-width: 400px;
   border-radius: 1.5rem;
   overflow: hidden;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
@@ -415,10 +415,12 @@ body {
 .form-section form .form-control {
   display: flex;
   flex-direction: column;
+  gap: 0.3rem;
 }
 .form-section form .form-control label {
   font-family: var(--_ff1);
-  font-weight: 500;
+  font-weight: 700;
+  letter-spacing: 0.035rem;
   transition: transform 0.5s ease;
   font-size: 0.875rem;
 }
@@ -535,4 +537,18 @@ body {
   animation: var(--animation-blink) forwards;
   animation-timing-function: var(--ease-elastic-in-out-4);
   font-size: 2rem;
+}
+
+.table-section table {
+  background-color: var(--surface-1);
+  border-collapse: collapse;
+  border-radius: unset;
+}
+.table-section table tbody > tr.t-row:nth-child(odd) {
+  background-color: var(--surface-3);
+}
+.table-section table th,
+.table-section table td {
+  background-color: unset;
+  padding: 1rem;
 }
