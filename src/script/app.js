@@ -72,6 +72,8 @@ function deductIncomeTax() {
       return (
         (gross - pension - nis - secondThres) * 0.3 + thresDiff * incomeTax
       );
+    } else if (gross < firstThres) {
+      return 0;
     } else {
       return (gross - nis - pension - firstThres) * incomeTax;
     }
@@ -80,17 +82,24 @@ function deductIncomeTax() {
   return threshold;
 }
 
-function calculateNetSalary() {
-  const realGross = parseInt(base.value) + parseInt(allowance.value);
+function handleNullAllowance() {
+  const allowanceValue = allowance.value;
+  return allowanceValue ? allowanceValue : 0;
+}
 
-  return (
+function calculateNetSalary() {
+  const realGross = parseInt(base.value) + parseInt(handleNullAllowance());
+
+  const rValue =
     realGross -
     deductNht() -
     deductEduTax() -
     deductIncomeTax() -
     deductNis() -
-    deductPension()
-  ).toFixed(2);
+    deductPension();
+
+  console.log(realGross);
+  return rValue;
 }
 
 // function calculateMonthlySalary() {
@@ -113,7 +122,16 @@ function displayQuickDisplay() {
   const monthlyValue = calculateNetSalary() / 12;
   const annualValue = calculateNetSalary() / 1;
 
+  console.log(calculateNetSalary() / 12, typeof annualValue);
+
   const currency = "$";
+  console.log(
+    `${currency} ${Intl.NumberFormat("en-US", {
+      maximumFractionDigits: 2,
+      minimumFractionDigits: 2,
+    }).format(monthlyValue)}`
+  );
+
   monthlyDisplay.querySelector(
     "p"
   ).textContent = `${currency} ${Intl.NumberFormat("en-US", {

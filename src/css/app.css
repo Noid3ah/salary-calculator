@@ -355,6 +355,11 @@ select {
   font: inherit;
 }
 
+@media (prefers-color-scheme: dark) {
+  :where(html) {
+    color-scheme: light;
+  }
+}
 :root {
   --_bgc: #52b788;
   --_form: #1a271d;
@@ -363,7 +368,7 @@ select {
   --_ff3: "Open sans", sans-serif;
   --_ff4: "Noto Serif Balinese", serif;
   --_ff5: "Montserrat", sans-serif;
-  --_input-radius: 0.2rem;
+  --_input-radius: 0.4rem;
   --_display: rgb(255, 200, 0);
 }
 
@@ -421,20 +426,24 @@ body {
 }
 .form-section form .form-control input[type=number] {
   border-radius: var(--_input-radius);
-  height: 35px;
+  height: 50px;
   border: none;
   padding-inline: 0.5rem;
   font-family: var(--_ff1);
+  font-size: 1.2rem;
+  font-weight: 600;
+  background-color: #fff;
+  color: #133333;
 }
 .form-section form .form-control input[type=number]::placeholder {
   font-family: var(--_ff1);
 }
 .form-section form .form-control input[type=number]:focus-visible {
-  outline: 2px solid rgb(255, 255, 255);
-  outline-offset: 3px;
+  outline: 4px solid #9f7928;
+  outline-offset: 0px;
 }
 .form-section form .form-control:focus-within > label {
-  transform: translateY(-2px);
+  transform: translateY(-4px);
   transition: transform 0.2s ease;
 }
 .form-section form .form-control input.allowanceTaxable,
@@ -473,6 +482,7 @@ body {
   font-family: var(--_ff4);
   display: grid;
   gap: 1rem;
+  max-height: 0px;
   transition: max-height 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .form-section form .salaryDisplay .monthly,
@@ -500,13 +510,28 @@ body {
 }
 .form-section form .salaryDisplay .full-details {
   display: flex;
-  justify-content: end;
+  justify-content: center;
 }
 .form-section form .salaryDisplay .full-details button {
-  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-family: var(--_ff5);
+  width: 100%;
+  background-color: #000;
+  font-weight: 600;
+  color: #9f7928;
+  border-radius: var(--_input-radius);
+  padding: 0.5rem 0;
   border: none;
   cursor: pointer;
 }
 .form-section form .salaryDisplay .full-details button:hover {
   color: white;
+}
+.form-section form .salaryDisplay .full-details button span {
+  animation: var(--animation-blink) forwards;
+  animation-timing-function: var(--ease-elastic-in-out-4);
+  font-size: 2rem;
 }
