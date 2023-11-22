@@ -140,3 +140,10 @@ function displayQuickDisplay() {
 function showSalaryDisplay() {
   salaryDisplay.classList.add("show-drop");
 }
+
+function formatNum(value) {
+  return `${Intl.NumberFormat("en-US", {
+    maximumFractionDigits: 2,
+    minimumFractionDigits: 2,
+  }).format(value)}`;
+}
