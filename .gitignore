@@ -1,7 +1,9 @@
 node_modules
 public
 src/sass
+src/normalize
 src/index.pug
 package-lock.json
 package.json
 package.txt
+.vscode
