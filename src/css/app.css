@@ -363,7 +363,7 @@ select {
 }
 :root {
   --_bgc: #52b788;
-  --_dominant-clr: #0c1510;
+  --_dominant-clr: rgb(11, 19, 15);
   --_dominant-clr2: rgba(19, 33, 25, 0.678);
   --_accent-clr: #adf385;
   --_secondary-clr: #f8f9f7;
@@ -403,7 +403,7 @@ body {
   grid-template-columns: 1fr 2fr;
   align-items: center;
 }
-@media (width < 1050px) {
+@media (max-width: 1050px) {
   .main {
     display: flex;
     flex-direction: column;
@@ -669,7 +669,7 @@ body {
 .table-section table td {
   padding: 1rem 1rem;
 }
-@media (width < 768px) {
+@media (max-width: 768px) {
   .table-section table {
     border-radius: unset;
     background-color: transparent;
